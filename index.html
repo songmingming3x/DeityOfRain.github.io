@@ -172,7 +172,8 @@
     .game-modal { position: fixed; inset: 0; z-index: 200; display: none; }
     .game-modal.active { display: flex; }
     .game-modal-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.85); }
-    .game-modal-frame { position: relative; z-index: 1; width: 100%; height: 100%; }
+    .game-modal-frame { position: relative; z-index: 1; width: 100%; height: 100%; overflow: hidden; }
+    .game-modal-frame #gameContent { width: 100%; height: 100%; overflow: auto; }
     .game-modal-close { position: absolute; top: 1rem; right: 1rem; z-index: 210; width: 40px; height: 40px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; cursor: pointer; transition: all 0.3s; }
     .game-modal-close:hover { background: rgba(255,255,255,0.2); }
     .game-modal-frame iframe { width: 100%; height: 100%; border: none; }
@@ -463,7 +464,7 @@
             <div class="game-toolbar-title">
               <span class="game-icon">&#127912;</span>
               <span>水浒传 · 互动故事游戏</span>
-              <span class="game-toolbar-badge">36位好汉</span>
+              <span class="game-toolbar-badge">横版闯关</span>
             </div>
             <button class="game-launch-btn" onclick="launchGame()">立即体验</button>
           </div>
@@ -473,8 +474,8 @@
             </div>
             <div class="game-preview-content">
               <div class="preview-hero">&#127912;</div>
-              <h3>替天行道 · 忠义两全</h3>
-              <p>选择你的好汉，体验他们的传奇人生。每位好汉都有独立的剧情线和命运抉择。</p>
+              <h3>替天行道 · 斩妖除魔</h3>
+              <p>操控梁山好汉，挥舞长枪，消灭贪官污吏！三大关卡，横版闯关，热血对决。</p>
               <button class="game-play-btn" onclick="launchGame()">
                 <span class="play-icon">&#9654;</span>
                 开始游戏
@@ -485,19 +486,19 @@
         <div class="game-features">
           <div class="game-feature">
             <div class="gf-icon">&#9876;</div>
-            <div class="gf-text">36位天罡星<br>独立故事线</div>
+            <div class="gf-text">三大关卡<br>逐步升级</div>
           </div>
           <div class="game-feature">
-            <div class="gf-icon">&#127918;</div>
-            <div class="gf-text">命运抉择<br>分支剧情</div>
+            <div class="gf-icon">&#128640;</div>
+            <div class="gf-text">横版闯关<br>热血战斗</div>
           </div>
           <div class="game-feature">
-            <div class="gf-icon">&#128188;</div>
-            <div class="gf-text">好汉图鉴<br>角色收集</div>
+            <div class="gf-icon">&#128079;</div>
+            <div class="gf-text">BOSS对决<br>消灭贪官</div>
           </div>
           <div class="game-feature">
-            <div class="gf-icon">&#9878;</div>
-            <div class="gf-text">战斗系统<br>热血对决</div>
+            <div class="gf-icon">&#128241;</div>
+            <div class="gf-text">手机触屏<br>随时开玩</div>
           </div>
         </div>
       </div>
