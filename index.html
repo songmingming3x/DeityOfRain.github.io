@@ -137,7 +137,7 @@
     .testimonial-name { font-weight: 700; font-size: 0.9rem; }
     .testimonial-role { font-size: 0.8rem; color: var(--muted); }
 
-    /* === Game Section (水浒传) === */
+    /* === Game Section === */
     .game-section { padding: 8rem 0; background: var(--bg2); position: relative; overflow: hidden; }
     .game-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
     .game-section::after { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1' fill='%232a3548' opacity='0.5'/%3E%3C/svg%3E"); pointer-events: none; }
@@ -173,10 +173,9 @@
     .game-modal.active { display: flex; }
     .game-modal-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.85); }
     .game-modal-frame { position: relative; z-index: 1; width: 100%; height: 100%; overflow: hidden; }
-    .game-modal-frame #gameContent { width: 100%; height: 100%; overflow: auto; }
     .game-modal-close { position: absolute; top: 1rem; right: 1rem; z-index: 210; width: 40px; height: 40px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; cursor: pointer; transition: all 0.3s; }
     .game-modal-close:hover { background: rgba(255,255,255,0.2); }
-    .game-modal-frame iframe { width: 100%; height: 100%; border: none; }
+    #gameCanvas { display: block; width: 100%; height: 100%; }
 
     /* === CTA Section === */
     .cta-section { padding: 8rem 0; text-align: center; position: relative; }
@@ -226,7 +225,7 @@
   <nav class="nav" id="nav">
     <div class="container nav-inner">
       <a href="#" class="nav-logo">
-        <div class="icon">y</div>
+        <img src="assets/logo-feather.jpg" alt="羽中仙" style="width:32px;height:32px;border-radius:8px;object-fit:cover;">
         羽中仙
       </a>
       <div class="nav-links">
@@ -292,7 +291,7 @@
       </div>
       <div class="services-grid">
         <div class="service-card fade-in">
-          <div class="service-icon green">👕</div>
+          <div class="service-icon green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.38 3.46L16 2 12 4.5 8 2l-4.38 1.46a1 1 0 00-.62.94V19a1 1 0 001 1h18a1 1 0 001-1V4.4a1 1 0 00-.62-.94z"/><path d="M12 4.5v16"/></svg></div>
           <h3>团购服装</h3>
           <p>高品质工装、T恤、卫衣、冲锋衣等团体服装团购，支持小批量起订，价格更优。</p>
           <div class="service-features">
@@ -303,7 +302,7 @@
           </div>
         </div>
         <div class="service-card fade-in">
-          <div class="service-icon gold">🏕️</div>
+          <div class="service-icon gold"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20h18"/><path d="M5 20V8l7-5 7 5v12"/><path d="M9 20v-6h6v6"/></svg></div>
           <h3>团购户外装备</h3>
           <p>帐篷、背包、登山杖、睡袋等专业户外装备团购，满足团队户外拓展与探险需求。</p>
           <div class="service-features">
@@ -314,7 +313,7 @@
           </div>
         </div>
         <div class="service-card fade-in">
-          <div class="service-icon blue">🏫</div>
+          <div class="service-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
           <h3>校企定制</h3>
           <p>学校校服、院系文化衫、企业工装、团建服装等校企专属定制，彰显组织文化。</p>
           <div class="service-features">
@@ -325,7 +324,7 @@
           </div>
         </div>
         <div class="service-card fade-in">
-          <div class="service-icon green">🎭</div>
+          <div class="service-icon green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
           <h3>工会定制</h3>
           <p>工会活动服装、节日礼品套装、职工福利定制，打造有温度的团队文化。</p>
           <div class="service-features">
@@ -335,7 +334,7 @@
           </div>
         </div>
         <div class="service-card fade-in">
-          <div class="service-icon gold">🎨</div>
+          <div class="service-icon gold"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
           <h3>专属设计</h3>
           <p>专业设计团队一对一服务，从LOGO设计到版型定制，打造独一无二的品牌形象。</p>
           <div class="service-features">
@@ -345,7 +344,7 @@
           </div>
         </div>
         <div class="service-card fade-in">
-          <div class="service-icon blue">🚚</div>
+          <div class="service-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5a2 2 0 01-2 2h-1"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/><path d="M9 10h1"/></svg></div>
           <h3>极速交付</h3>
           <p>自有供应链体系，从下单到交付最快7天，全国包邮，品质保证。</p>
           <div class="service-features">
@@ -417,7 +416,7 @@
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="testimonial-text">"羽中仙为我们公司的户外团设定制了全套装备，质量超出预期，设计感十足，员工们都非常满意！"</p>
           <div class="testimonial-author">
-            <div class="testimonial-avatar">👔</div>
+            <div class="testimonial-avatar">Z</div>
             <div>
               <div class="testimonial-name">张经理</div>
               <div class="testimonial-role">某科技公司行政总监</div>
@@ -428,7 +427,7 @@
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="testimonial-text">"连续三年合作，每次都是准时交付。校服质量经得起学生们的日常考验，家长反馈非常好。"</p>
           <div class="testimonial-author">
-            <div class="testimonial-avatar">🎓</div>
+            <div class="testimonial-avatar">L</div>
             <div>
               <div class="testimonial-name">李主任</div>
               <div class="testimonial-role">某高校后勤处</div>
@@ -439,7 +438,7 @@
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="testimonial-text">"工会活动服装交给羽中仙做，设计新颖、面料舒适，价格也很有竞争力。强烈推荐！"</p>
           <div class="testimonial-author">
-            <div class="testimonial-avatar">👥</div>
+            <div class="testimonial-avatar">W</div>
             <div>
               <div class="testimonial-name">王主席</div>
               <div class="testimonial-role">某国企工会主席</div>
@@ -450,21 +449,21 @@
     </div>
   </section>
 
-  <!-- ======== Game Section (水浒传互动) ======== -->
+  <!-- ======== Game Section ======== -->
   <section class="game-section" id="game">
     <div class="container">
       <div class="game-header fade-in">
         <div class="section-label">Interactive Experience</div>
-        <h2 class="section-title">水浒传 · 一百单八将传奇</h2>
-        <p class="section-desc">羽中仙品牌互动体验 —— 一百单八将各有一段故事，正如每一件定制装备都有独特灵魂。点击体验我们精心打造的互动游戏。</p>
+        <h2 class="section-title">水浒传 · 武松醉打蒋门神</h2>
+        <p class="section-desc">羽中仙品牌互动体验 —— Galgame视觉小说，三章剧情，沉浸式体验武松的豪侠与正义。点击开始你的江湖之旅。</p>
       </div>
       <div class="game-wrapper fade-in">
         <div class="game-container">
           <div class="game-toolbar">
             <div class="game-toolbar-title">
-              <span class="game-icon">&#127912;</span>
-              <span>水浒传 · 互动故事游戏</span>
-              <span class="game-toolbar-badge">横版闯关</span>
+              <span class="game-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent2)" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span>
+              <span>水浒传 · 视觉小说</span>
+              <span class="game-toolbar-badge">Galgame</span>
             </div>
             <button class="game-launch-btn" onclick="launchGame()">立即体验</button>
           </div>
@@ -473,32 +472,32 @@
               <img src="assets/wuxia_outdoor_1280x720.jpg" alt="水浒传游戏预览">
             </div>
             <div class="game-preview-content">
-              <div class="preview-hero">&#127912;</div>
-              <h3>替天行道 · 斩妖除魔</h3>
-              <p>操控梁山好汉，挥舞长枪，消灭贪官污吏！三大关卡，横版闯关，热血对决。</p>
+              <div class="preview-hero" style="font-family:var(--font-display);letter-spacing:0.05em;">水浒传</div>
+              <h3>醉打蒋门神 · 义夺快活林</h3>
+              <p>三章沉浸式剧情，分支选择影响故事走向，重温武松以醉酒之态击败蒋门神、夺回快活林的传奇故事。</p>
               <button class="game-play-btn" onclick="launchGame()">
                 <span class="play-icon">&#9654;</span>
-                开始游戏
+                开始体验
               </button>
             </div>
           </div>
         </div>
         <div class="game-features">
           <div class="game-feature">
-            <div class="gf-icon">&#9876;</div>
-            <div class="gf-text">三大关卡<br>逐步升级</div>
+            <div class="gf-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+            <div class="gf-text">三章剧情<br>沉浸体验</div>
           </div>
           <div class="game-feature">
-            <div class="gf-icon">&#128640;</div>
-            <div class="gf-text">横版闯关<br>热血战斗</div>
+            <div class="gf-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></div>
+            <div class="gf-text">分支选择<br>多线剧情</div>
           </div>
           <div class="game-feature">
-            <div class="gf-icon">&#128079;</div>
-            <div class="gf-text">BOSS对决<br>消灭贪官</div>
+            <div class="gf-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <div class="gf-text">角色立绘<br>经典场景</div>
           </div>
           <div class="game-feature">
-            <div class="gf-icon">&#128241;</div>
-            <div class="gf-text">手机触屏<br>随时开玩</div>
+            <div class="gf-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18" stroke-linecap="round"/></svg></div>
+            <div class="gf-text">手机适配<br>随时体验</div>
           </div>
         </div>
       </div>
@@ -521,7 +520,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3><span style="display:inline-block;width:28px;height:28px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:6px;text-align:center;line-height:28px;font-size:0.9rem;">y</span> 羽中仙</h3>
+          <h3><img src="assets/logo-feather.jpg" alt="羽中仙" style="width:28px;height:28px;border-radius:6px;object-fit:cover;vertical-align:middle;margin-right:4px;"> 羽中仙</h3>
           <p>专注团购服装、户外装备、校企定制、工会定制。10年行业经验，2000+团队信赖之选。</p>
         </div>
         <div class="footer-col">
@@ -551,16 +550,567 @@
     </div>
   </footer>
 
-  <!-- ======== Game Modal ======== -->
+  <!-- ======== Game Modal (内嵌Canvas) ======== -->
   <div class="game-modal" id="gameModal">
     <div class="game-modal-overlay" onclick="closeGame()"></div>
     <div class="game-modal-frame">
       <button class="game-modal-close" onclick="closeGame()">&#10005;</button>
-      <div id="gameContent"></div>
+      <canvas id="gameCanvas"></canvas>
     </div>
   </div>
 
-  <!-- ======== Scripts ======== -->
+  <!-- ======== Website Scripts ======== -->
   <script src="assets/main.js"></script>
+
+  <!-- ======== Galgame 内联脚本 ======== -->
+  <script>
+  (function(){
+    var GC=document.getElementById('gameCanvas');
+    var X=GC.getContext('2d');
+    var W,H;
+    var gameRunning=false, gameAnimId=null;
+    var gameTime=0;
+
+    function gameResize(){
+      W=GC.width=GC.parentElement.clientWidth;
+      H=GC.height=GC.parentElement.clientHeight;
+    }
+
+    // ========== GAME STATE ==========
+    var state='title';
+    var chapter=0, node=0;
+    var textBuffer='', textDisplay='', charIdx=0, textSpeed=30, textTimer=0;
+    var textDone=false, waitingChoice=false;
+    var fadeAlpha=0, fadeDir=0, fadeCallback=null;
+    var shakeTime=0;
+    var currentBg='tavern_outside';
+    var choiceBoxes=[];
+
+    // ========== EXPRESSION AUTO-DETECT ==========
+    // 从对白文本自动推断表情
+    function detectExpression(speaker, text){
+      if(!text) return 'neutral';
+      var t = text;
+      if(t.indexOf('激动')>=0 || t.indexOf('太好了')>=0 || t.indexOf('痛快')>=0) return 'happy';
+      if(t.indexOf('怒')>=0 || t.indexOf('大怒')>=0 || t.indexOf('放肆')>=0) return 'angry';
+      if(t.indexOf('冷笑')>=0 || t.indexOf('打的是虎')>=0 || t.indexOf('哼')>=0) return 'smirk';
+      if(t.indexOf('颤抖')>=0 || t.indexOf('饶命')>=0 || t.indexOf('再也不敢')>=0) return 'defeated';
+      if(t.indexOf('酒')>=0 || t.indexOf('饮')>=0 || t.indexOf('醉')>=0 || t.indexOf('抹嘴')>=0) return 'drunk';
+      if(t.indexOf('拍桌')>=0 || t.indexOf('大声')>=0) return 'shout';
+      if(t.indexOf('皱眉')>=0 || t.indexOf('不知')>=0) return 'frown';
+      if(t.indexOf('万死不辞')>=0 || t.indexOf('替你夺')>=0 || t.indexOf('好计')>=0 || t.indexOf('行侠仗义')>=0) return 'determined';
+      if(t.indexOf('喃喃')>=0 || t.indexOf('命运')>=0 || t.indexOf('风尘仆仆')>=0) return 'thoughtful';
+      if(t.indexOf('好生看管')>=0 || t.indexOf('老实些')>=0) return 'stern';
+      if(t.indexOf('高义')>=0 || t.indexOf('满饮')>=0 || t.indexOf('二郎')>=0) return 'grateful';
+      if(t.indexOf('不如')>=0 || t.indexOf('可恨')>=0 || t.indexOf('有家难回')>=0) return 'sad';
+      return 'neutral';
+    }
+
+    // ========== CHAPTER DATA ==========
+    var chapters=[
+      {
+        title:'第一章', subtitle:'孟州牢城',
+        bg:'prison_yard',
+        nodes:[
+          {type:'narration', text:'北宋宣和年间，武松因杀嫂为兄报仇，被刺配孟州。一路风餐露宿，历经千辛万苦，终于抵达孟州牢城。'},
+          {type:'scene', speaker:'system', text:'【孟州牢城 · 天气晴朗】'},
+          {type:'dialogue', speaker:'武松', text:'这一路走来，风尘仆仆。不知这孟州牢城中，等待我的是什么命运……'},
+          {type:'dialogue', speaker:'狱卒', text:'你就是那杀嫂的武松？到这孟州来，可要老实些！施管营有令，让我好生看管于你。'},
+          {type:'dialogue', speaker:'武松', text:'多谢这位兄弟关照。武松虽是罪身，却也知好歹。'},
+          {type:'narration', text:'施管营之子施恩，久仰武松威名，对他颇为礼遇。武松在牢中未曾受苦，每日好吃好喝。'},
+          {type:'scene', speaker:'system', text:'【数日后 · 牢城院内】'},
+          {type:'dialogue', speaker:'施恩', text:'武二郎！你且留步，我有要事相商！'},
+          {type:'dialogue', speaker:'武松', text:'这位小管营，请讲。武松但有所能，万死不辞。'},
+          {type:'dialogue', speaker:'施恩', text:'实不相瞒，我在东门外有一处酒店，名为"快活林"，原是孟州一等一的营生。'},
+          {type:'dialogue', speaker:'施恩', text:'可恨那蒋门神！此人仗着一身本领，投靠了张团练，霸占了快活林！我如今……有家难回。'},
+          {type:'dialogue', speaker:'武松', text:'蒋门神？此人有多大的本事？'},
+          {type:'dialogue', speaker:'施恩', text:'那蒋门神有万夫不当之勇，三五条大汉近不得身。快活林上下二百余人都怕了他三分！'},
+          {type:'dialogue', speaker:'武松', text:'哼……三五条大汉近不得身？倒想会会他。'},
+          {type:'choice', text:'武松会如何回应施恩的请求？', options:[
+            {text:'义气为重，答应相助', next:15},
+            {text:'先打听清楚再作打算', next:17}
+          ]},
+          {type:'dialogue', speaker:'武松', text:'施恩兄弟，你对我有恩，武松岂能坐视不理？这快活林，我替你夺回来！'},
+          {type:'dialogue', speaker:'施恩', text:'（激动）武二郎！你当真愿意帮忙？太好了！'},
+          {type:'dialogue', speaker:'武松', text:'对付这等恶霸，须得有个万全之策。我且先摸清他的底细。'},
+          {type:'dialogue', speaker:'施恩', text:'二郎放心，我已将蒋门神的底细打听得一清二楚。'},
+          {type:'dialogue', speaker:'施恩', text:'蒋门神有三件绝技：一是"玉环步，鸳鸯脚"，二是一身横练功夫，三是酒量惊人，越喝越猛。'},
+          {type:'dialogue', speaker:'武松', text:'酒量惊人？呵……这倒有趣。'},
+          {type:'dialogue', speaker:'施恩', text:'我有个计策。明日蒋门神在快活林设宴，二郎你可装作过路客人，先饮上几碗酒……'},
+          {type:'dialogue', speaker:'武松', text:'你是说……让我以醉打醉？'},
+          {type:'dialogue', speaker:'施恩', text:'正是！待他酒过三巡，你便亮出身份，与他理论。若他动手，你正好……'},
+          {type:'dialogue', speaker:'武松', text:'好计！就依你之言，明日快活林见！'},
+          {type:'narration', text:'武松拍胸应允，眼中闪过一丝锐利的光芒。这一夜，他擦拭了戒刀，静静等待着天明。'},
+          {type:'end_chapter'}
+        ]
+      },
+      {
+        title:'第二章', subtitle:'醉打蒋门神',
+        bg:'tavern_inside',
+        nodes:[
+          {type:'scene', speaker:'system', text:'【翌日 · 快活林酒店】'},
+          {type:'narration', text:'快活林酒店热闹非凡，宾客往来如云。蒋门神坐在正中太师椅上，左右簇拥着一众打手，好不威风。'},
+          {type:'dialogue', speaker:'蒋门神', text:'哈哈哈！这快活林上下，谁不识我蒋某的威名？今日在此设宴，诸位尽兴吃喝！'},
+          {type:'dialogue', speaker:'打手', text:'蒋大爷威武！谁敢不来！'},
+          {type:'narration', text:'武松身着布衣，大步流星走入快活林。他不慌不忙，在角落坐下，叫了一坛酒。'},
+          {type:'dialogue', speaker:'武松', text:'小二，上酒！要好酒！'},
+          {type:'narration', text:'武松一碗接一碗，面不改色。酒过三碗，他站起身来，目光如炬，直视蒋门神。'},
+          {type:'dialogue', speaker:'武松', text:'（大声）店家！这酒淡得很，可有烈些的？'},
+          {type:'dialogue', speaker:'蒋门神', text:'（皱眉）这人是谁？好大的口气！'},
+          {type:'dialogue', speaker:'打手甲', text:'蒋大爷，此人从未来过。要不要小的去问问？'},
+          {type:'dialogue', speaker:'蒋门神', text:'不用。看他一个人，能翻出什么浪来。'},
+          {type:'narration', text:'武松又饮了几碗，故意将酒碗重重放在桌上，发出"砰"的一声。'},
+          {type:'dialogue', speaker:'武松', text:'（拍桌）好酒！可惜这酒店的主人，怎么换了个旁人？'},
+          {type:'dialogue', speaker:'蒋门神', text:'（怒）你说什么？这快活林的主人就是我蒋忠！你是何人，敢在此放肆？'},
+          {type:'choice', text:'武松如何亮明身份？', options:[
+            {text:'冷笑一声，亮出身份', next:11},
+            {text:'再喝一碗，以醉态对峙', next:13}
+          ]},
+          {type:'dialogue', speaker:'武松', text:'（冷笑）蒋忠？好大的名号！你不过是个投靠权贵的无赖，竟敢霸占他人产业！'},
+          {type:'dialogue', speaker:'武松', text:'我乃武松！今日替朋友讨个公道！'},
+          {type:'dialogue', speaker:'蒋门神', text:'武松？你就是那打虎的武松？哈哈哈，打虎英雄又如何？到了我蒋某的地盘……'},
+          {type:'dialogue', speaker:'武松', text:'（再饮一碗，抹嘴）你说得对，我打的是虎，你……不过是条狗罢了。'},
+          {type:'dialogue', speaker:'蒋门神', text:'（大怒）给我拿下他！'},
+          {type:'narration', text:'话音未落，蒋门神已一拳向武松袭来！这一拳带着风声，着实威猛。'},
+          {type:'narration', text:'武松侧身一闪，蒋门神拳风擦肩而过。"砰"——蒋门神一拳砸碎了桌角！'},
+          {type:'dialogue', speaker:'武松', text:'好拳力！可惜……慢了些。'},
+          {type:'battle', enemy:'蒋门神', rounds:[
+            {p:'武松闪身避开蒋门神的一记重拳', e:'蒋门神怒喝："站稳了！别跑！"', pAction:'dodge'},
+            {p:'武松借酒劲，一掌拍在蒋门神胸口', e:'蒋门神闷哼一声，退了三步', pAction:'attack', eEffect:'stagger'},
+            {p:'蒋门神使出"玉环步"，脚步飘忽，连环攻来', e:'蒋门神："看我的玉环步，鸳鸯脚！"', pAction:'guard'},
+            {p:'武松醉意上涌，反而更加凶猛，一脚踢翻蒋门神', e:'蒋门神惨叫倒地！', pAction:'attack', eEffect:'fall'},
+            {p:'武松飞身上前，将蒋门神按在地上', e:'蒋门神："饶……饶命……"', pAction:'attack', eEffect:'defeat'}
+          ]},
+          {type:'narration', text:'武松三拳两脚，蒋门神便被打得鼻青脸肿，趴在地上动弹不得。快活林上下，无不惊骇！'},
+          {type:'dialogue', speaker:'武松', text:'蒋门神！今日我武松替施恩兄弟讨回快活林。若再敢来犯，休怪我手下无情！'},
+          {type:'dialogue', speaker:'蒋门神', text:'（颤抖）是……是……小人再也不敢了……'},
+          {type:'end_chapter'}
+        ]
+      },
+      {
+        title:'第三章', subtitle:'义夺快活林',
+        bg:'tavern_celebration',
+        nodes:[
+          {type:'scene', speaker:'system', text:'【快活林 · 黄昏】'},
+          {type:'narration', text:'蒋门神连滚带爬地逃出了快活林，从此再也不敢踏入孟州半步。快活林上下二百余人，无不拍手称快。'},
+          {type:'dialogue', speaker:'酒客', text:'痛快！痛快！这蒋门神平日作威作福，今日终于有人治得了他！'},
+          {type:'dialogue', speaker:'酒客乙', text:'这位壮士好生了得！不知是何方神圣？'},
+          {type:'dialogue', speaker:'施恩', text:'（激动）这位便是打虎英雄——行者武松！'},
+          {type:'narration', text:'众人一听"武松"二字，齐齐倒吸一口冷气，纷纷上前拜见。'},
+          {type:'dialogue', speaker:'众人', text:'原来是打虎的武二郎！久仰久仰！'},
+          {type:'dialogue', speaker:'施恩', text:'武二郎，快活林今日能够夺回，全赖你的大力！请受施恩一拜！'},
+          {type:'dialogue', speaker:'武松', text:'（扶起施恩）兄弟不必如此。你我虽是新交，却也一见如故。行侠仗义，本是我辈分内之事。'},
+          {type:'narration', text:'施恩设下盛宴，款待武松。快活林中觥筹交错，宾主尽欢。'},
+          {type:'scene', speaker:'system', text:'【宴席之中】'},
+          {type:'dialogue', speaker:'施恩', text:'二郎，你此番恩情，施恩铭记于心。日后但有差遣，万死不辞。'},
+          {type:'dialogue', speaker:'武松', text:'我只是做了该做的事。这世道不公之事太多，若人人都能站出来，何愁天下不太平？'},
+          {type:'dialogue', speaker:'武松', text:'施恩兄弟，这快活林你且好好经营。日后若再有恶人欺凌，只管来找我武松。'},
+          {type:'dialogue', speaker:'施恩', text:'二郎高义！来，满饮此杯！'},
+          {type:'narration', text:'武松举碗痛饮，烈酒入喉，豪气干云。快活林的灯火映照着他刚毅的面庞。'},
+          {type:'dialogue', speaker:'武松', text:'（望向窗外，喃喃自语）兄长，你在天之灵，可以安息了。弟弟武松，没有给你丢人。'},
+          {type:'narration', text:'窗外，夕阳如血，洒在孟州城的屋檐之上。武松的身影，被拉得长长的，像一把出鞘的刀。'},
+          {type:'narration', text:'快活林的故事很快传遍江湖。人们说：行者武松，醉打蒋门神，义夺快活林，真乃当世豪杰！'},
+          {type:'narration', text:'而武松的传奇，才刚刚开始……'},
+          {type:'scene', speaker:'system', text:'【全剧终】'},
+          {type:'end_chapter'}
+        ]
+      }
+    ];
+
+    // ========== CHARACTER IMAGES ==========
+    var imgWuSong=new Image(); imgWuSong.src='assets/portrait_wusong.jpg';
+    var imgJiang=new Image(); imgJiang.src='assets/portrait_jiang.jpg';
+    var imgShiEn=new Image(); imgShiEn.src='assets/portrait_shien.jpg';
+
+    function drawPortrait(img,cx,bottomY,alpha){
+      if(!img||!img.complete||!img.naturalWidth)return;
+      var targetH=H*0.58;
+      var scale=targetH/img.naturalHeight;
+      var w=img.naturalWidth*scale,h=img.naturalHeight*scale;
+      var breath=Math.sin(gameTime*0.003)*3;
+      X.save();
+      X.globalAlpha=alpha;
+      X.drawImage(img,cx-w/2,bottomY-h+breath,w,h);
+      if(alpha>=0.85){
+        X.fillStyle='rgba(212,168,67,0.06)';
+        X.beginPath();X.ellipse(cx,bottomY-h*0.35,w*0.35,h*0.35,0,0,Math.PI*2);X.fill();
+      }
+      X.restore();
+    }
+
+    function drawWuSong(cx,cy,s,expression,alpha){
+      drawPortrait(imgWuSong,cx,(state==='title'?H*0.75:H*0.82),alpha);
+    }
+    function drawJiangMenshen(cx,cy,s,expression,alpha){
+      drawPortrait(imgJiang,cx,(state==='title'?H*0.75:H*0.82),alpha);
+    }
+    function drawShiEn(cx,cy,s,expression,alpha){
+      drawPortrait(imgShiEn,cx,(state==='title'?H*0.75:H*0.82),alpha);
+    }
+
+    // ========== MINOR CHARACTER (silhouette) ==========
+    function drawMinorChar(cx,cy,s,name,alpha){
+      s=s||0.7; alpha=(alpha!==undefined)?alpha:0.7;
+      X.save();
+      X.globalAlpha=alpha;
+      X.translate(cx,cy);X.scale(s,s);
+      // Simple body silhouette
+      X.fillStyle='#3a3a3a';
+      X.beginPath();X.moveTo(-20,0);X.lineTo(-14,-10);X.lineTo(14,-10);X.lineTo(20,0);X.lineTo(20,30);X.lineTo(-20,30);X.closePath();X.fill();
+      // Head
+      X.fillStyle='#4a4a4a';X.beginPath();X.ellipse(0,-28,12,14,0,0,Math.PI*2);X.fill();
+      // Simple eyes
+      X.fillStyle='#888';X.fillRect(-6,-30,4,3);X.fillRect(2,-30,4,3);
+      // Mouth
+      X.fillStyle='#555';X.fillRect(-4,-22,8,2);
+      X.restore();
+      // Name label
+      if(name && alpha>=0.5){
+        X.save();X.globalAlpha=alpha*0.7;
+        X.fillStyle='#7a8ba5';X.font='11px sans-serif';X.textAlign='center';
+        X.fillText(name,cx,cy+30*s);
+        X.restore();
+      }
+    }
+
+    // ========== BACKGROUNDS ==========
+    function drawBackground(bgName){
+      var grd=X.createLinearGradient(0,0,0,H);
+      if(bgName==='prison_yard'){
+        grd.addColorStop(0,'#2a1a10');grd.addColorStop(1,'#1a0e05');
+        X.fillStyle=grd;X.fillRect(0,0,W,H);
+        X.fillStyle='#3a2a1a';
+        for(var i=0;i<W;i+=80){for(var j=0;j<H;j+=40){X.fillRect(i,j,78,38);X.strokeStyle='#2a1a0a';X.lineWidth=1;X.strokeRect(i,j,78,38);}}
+        X.fillStyle='#1a1a0a';X.fillRect(W*0.3,H*0.1,W*0.4,H*0.8);
+        X.fillStyle='#4a3a2a';X.fillRect(W*0.3,H*0.1,W*0.4,8);X.fillRect(W*0.3,H*0.85,W*0.4,8);
+        for(var i=0;i<5;i++){X.fillStyle='#666';X.fillRect(W*0.35+i*W*0.06,H*0.15,4,H*0.65);}
+      }else if(bgName==='tavern_inside'){
+        grd.addColorStop(0,'#1a1210');grd.addColorStop(1,'#2a1a10');
+        X.fillStyle=grd;X.fillRect(0,0,W,H);
+        X.fillStyle='#3a2810';X.fillRect(0,0,W,H*0.3);X.fillRect(0,H*0.3,W,H*0.7);
+        X.strokeStyle='#2a1808';X.lineWidth=1;for(var i=0;i<W;i+=15){X.beginPath();X.moveTo(i,0);X.lineTo(i,H);X.stroke();}
+        X.fillStyle='#5a3a1a';for(var i=0;i<3;i++){X.fillRect(W*0.1+i*W*0.3,H*0.6,W*0.2,H*0.03);X.fillRect(W*0.1+i*W*0.3-3,H*0.55,W*0.2+6,H*0.08);}
+        for(var i=0;i<4;i++){var lx=W*0.15+i*W*0.25,ly=H*0.15;X.fillStyle='rgba(220,160,40,0.15)';X.beginPath();X.arc(lx,ly,25,0,Math.PI*2);X.fill();X.fillStyle='#8B6914';X.fillRect(lx-1,ly-15,2,30);X.fillStyle='#d4a843';X.beginPath();X.arc(lx,ly,8,0,Math.PI*2);X.fill();}
+        X.fillStyle='#c43e3e';X.fillRect(W*0.45,H*0.05,W*0.1,H*0.25);
+        X.fillStyle='#d4a843';X.font='bold 16px serif';X.textAlign='center';X.fillText('快活林',W*0.5,H*0.18);X.textAlign='left';
+      }else if(bgName==='tavern_celebration'){
+        grd.addColorStop(0,'#2a1a0a');grd.addColorStop(1,'#1a0e05');
+        X.fillStyle=grd;X.fillRect(0,0,W,H);
+        X.fillStyle='rgba(220,160,40,0.08)';X.beginPath();X.arc(W*0.5,H*0.3,200,0,Math.PI*2);X.fill();
+        X.fillStyle='#3a2810';X.fillRect(0,0,W,H*0.3);X.fillRect(0,H*0.3,W,H*0.7);
+        X.strokeStyle='#2a1808';X.lineWidth=1;for(var i=0;i<W;i+=15){X.beginPath();X.moveTo(i,0);X.lineTo(i,H);X.stroke();}
+        X.fillStyle='#5a3a1a';for(var i=0;i<3;i++){X.fillRect(W*0.1+i*W*0.3,H*0.6,W*0.2,H*0.03);X.fillRect(W*0.1+i*W*0.3-3,H*0.55,W*0.2+6,H*0.08);}
+        for(var i=0;i<6;i++){var lx=W*0.1+i*W*0.16,ly=H*0.12;X.fillStyle='rgba(220,160,40,0.2)';X.beginPath();X.arc(lx,ly,30,0,Math.PI*2);X.fill();X.fillStyle='#8B6914';X.fillRect(lx-1,ly-18,2,36);X.fillStyle='#d4a843';X.beginPath();X.arc(lx,ly,10,0,Math.PI*2);X.fill();}
+        X.fillStyle='#c43e3e';X.fillRect(W*0.42,H*0.03,W*0.16,H*0.3);
+        X.fillStyle='#d4a843';X.font='bold 18px serif';X.textAlign='center';X.fillText('快活林',W*0.5,H*0.17);X.textAlign='left';
+      }else{
+        grd.addColorStop(0,'#0a0e1a');grd.addColorStop(1,'#1a0a0a');
+        X.fillStyle=grd;X.fillRect(0,0,W,H);
+        for(var i=0;i<30;i++){X.fillStyle='#e8dcc8';X.globalAlpha=0.3+Math.random()*0.5;X.fillRect(Math.random()*W,Math.random()*H*0.5,1.5,1.5);}
+        X.globalAlpha=1;
+        X.fillStyle='#151d30';X.beginPath();X.moveTo(0,H);
+        for(var x=0;x<=W;x+=4){var h=Math.sin(x*0.005)*30+Math.sin(x*0.012)*20;X.lineTo(x,H*0.5-h);}
+        X.lineTo(W,H);X.closePath();X.fill();
+      }
+    }
+
+    // ========== DIALOG BOX ==========
+    function roundRect(ctx,x,y,w,h,r){
+      ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+      ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+      ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();
+    }
+    function wrapText(ctx,text,x,y,maxW,lineH){
+      var line='';
+      for(var i=0;i<text.length;i++){
+        var test=line+text[i];
+        if(ctx.measureText(test).width>maxW){ctx.fillText(line,x,y);y+=lineH;line=text[i]||'';}
+        else{line=test}
+      }
+      if(line)ctx.fillText(line,x,y);
+    }
+    function drawDialogBox(speaker,text,isNarration){
+      var boxY=H*0.62,boxH=H*0.36,boxW=Math.min(W*0.9,800),boxX=(W-boxW)/2;
+      X.fillStyle='rgba(10,8,6,0.92)';roundRect(X,boxX,boxY,boxW,boxH,12);X.fill();
+      X.strokeStyle='#d4a843';X.lineWidth=2;roundRect(X,boxX,boxY,boxW,boxH,12);X.stroke();
+      X.strokeStyle='rgba(212,168,67,0.3)';X.lineWidth=1;roundRect(X,boxX+4,boxY+4,boxW-8,boxH-8,10);X.stroke();
+      if(isNarration){
+        X.fillStyle='#d4a843';X.font='14px serif';X.textAlign='center';X.fillText('-- 旁白 --',W/2,boxY+28);
+        X.fillStyle='#c8b88a';X.font='15px sans-serif';wrapText(X,text,boxX+30,boxY+50,boxW-60,22);
+      }else{
+        X.fillStyle='rgba(196,62,62,0.8)';roundRect(X,boxX+15,boxY+12,120,26,6);X.fill();
+        X.fillStyle='#fff';X.font='bold 14px sans-serif';X.textAlign='center';X.fillText(speaker,boxX+75,boxY+30);
+        X.fillStyle='#e8dcc8';X.font='15px sans-serif';X.textAlign='left';wrapText(X,text,boxX+25,boxY+55,boxW-50,22);
+      }
+      X.textAlign='left';
+      if(textDone){var blink=Math.sin(Date.now()*0.005)>0;if(blink){X.fillStyle='#d4a843';X.font='12px sans-serif';X.textAlign='right';X.fillText('>> 点击继续',boxX+boxW-20,boxY+boxH-15);X.textAlign='left';}}
+    }
+
+    // ========== CHOICE BOXES ==========
+    function drawChoiceBoxes(options){
+      choiceBoxes=[];
+      var startY=H*0.45,boxW=Math.min(W*0.7,500),boxX=(W-boxW)/2;
+      for(var i=0;i<options.length;i++){
+        var by=startY+i*65;
+        choiceBoxes.push({x:boxX,y:by,w:boxW,h:50,text:options[i].text,idx:i});
+        X.fillStyle='rgba(196,62,62,0.15)';roundRect(X,boxX,by,boxW,50,8);X.fill();
+        X.strokeStyle='rgba(212,168,67,0.6)';X.lineWidth=1.5;roundRect(X,boxX,by,boxW,50,8);X.stroke();
+        X.fillStyle='#d4a843';X.font='14px sans-serif';X.fillText('>',boxX+15,by+30);
+        X.fillStyle='#e8dcc8';X.font='16px sans-serif';X.fillText(options[i].text,boxX+40,by+30);
+      }
+    }
+
+    // ========== SCENE CHARACTER LAYOUT ==========
+    // 根据当前对话节点，决定哪些角色在场、谁在说话、表情是什么
+    function getSceneCharacters(chIdx, ndIdx){
+      var nd = chapters[chIdx].nodes[ndIdx];
+      if(!nd || nd.type==='narration' || nd.type==='scene') return null;
+      var spk = nd.speaker;
+      var exp = detectExpression(spk, nd.text);
+      var bg = chapters[chIdx].bg;
+
+      if(bg==='prison_yard'){
+        if(spk==='武松') return [{id:'wusong',x:W*0.35,y:H*0.42,exp:exp,alpha:1},{id:'shien',x:W*0.65,y:H*0.42,exp:'neutral',alpha:0.5}];
+        if(spk==='施恩') return [{id:'wusong',x:W*0.35,y:H*0.42,exp:'neutral',alpha:0.5},{id:'shien',x:W*0.65,y:H*0.42,exp:exp,alpha:1}];
+        if(spk==='狱卒') return [{id:'wusong',x:W*0.35,y:H*0.42,exp:'thoughtful',alpha:0.5},{id:'minor',x:W*0.65,y:H*0.42,name:'狱卒',alpha:1}];
+        return [{id:'wusong',x:W*0.35,y:H*0.42,exp:'neutral',alpha:0.5}];
+      }
+      if(bg==='tavern_inside'){
+        if(spk==='蒋门神') return [{id:'wusong',x:W*0.2,y:H*0.42,exp:'smirk',alpha:0.5},{id:'jiang',x:W*0.5,y:H*0.42,exp:exp,alpha:1},{id:'minor',x:W*0.8,y:H*0.42,name:'打手',alpha:0.4}];
+        if(spk==='武松') return [{id:'wusong',x:W*0.35,y:H*0.42,exp:exp,alpha:1},{id:'jiang',x:W*0.65,y:H*0.42,exp:'angry',alpha:0.5}];
+        if(spk==='打手'||spk==='打手甲') return [{id:'wusong',x:W*0.2,y:H*0.42,exp:'drunk',alpha:0.4},{id:'jiang',x:W*0.5,y:H*0.42,exp:'neutral',alpha:0.5},{id:'minor',x:W*0.8,y:H*0.42,name:'打手',alpha:1}];
+        return [{id:'wusong',x:W*0.35,y:H*0.42,exp:'neutral',alpha:0.5},{id:'jiang',x:W*0.65,y:H*0.42,exp:'neutral',alpha:0.5}];
+      }
+      if(bg==='tavern_celebration'){
+        if(spk==='武松') return [{id:'wusong',x:W*0.3,y:H*0.42,exp:exp,alpha:1},{id:'shien',x:W*0.65,y:H*0.42,exp:'grateful',alpha:0.5}];
+        if(spk==='施恩') return [{id:'wusong',x:W*0.3,y:H*0.42,exp:'smile',alpha:0.5},{id:'shien',x:W*0.65,y:H*0.42,exp:exp,alpha:1}];
+        if(spk==='酒客'||spk==='酒客乙'||spk==='众人') return [{id:'wusong',x:W*0.25,y:H*0.42,exp:'smile',alpha:0.4},{id:'shien',x:W*0.55,y:H*0.42,exp:'happy',alpha:0.4},{id:'minor',x:W*0.8,y:H*0.42,name:spk,alpha:1}];
+        return [{id:'wusong',x:W*0.3,y:H*0.42,exp:'smile',alpha:0.5},{id:'shien',x:W*0.65,y:H*0.42,exp:'happy',alpha:0.5}];
+      }
+      return null;
+    }
+
+    // ========== DRAW CHARACTERS IN SCENE ==========
+    function drawSceneCharacters(chars){
+      if(!chars) return;
+      // Sort: dimmed characters drawn first, speaker drawn last (on top)
+      var sorted = chars.slice().sort(function(a,b){return a.alpha - b.alpha;});
+      for(var i=0;i<sorted.length;i++){
+        var c = sorted[i];
+        if(c.id==='wusong') drawWuSong(c.x,c.y,0.9,c.exp,c.alpha);
+        else if(c.id==='jiang') drawJiangMenshen(c.x,c.y,0.9,c.exp,c.alpha);
+        else if(c.id==='shien') drawShiEn(c.x,c.y,0.9,c.exp,c.alpha);
+        else if(c.id==='minor') drawMinorChar(c.x,c.y,0.7,c.name,c.alpha);
+      }
+    }
+
+    // ========== BATTLE SCENE ==========
+    var battleRounds=[],battleIdx=0,battleEnemy='';
+    function startBattle(enemy,rounds){battleRounds=rounds;battleIdx=0;state='battle';battleEnemy=enemy;advanceText(battleRounds[0].p+'。'+battleRounds[0].e);}
+    function updateBattle(){
+      if(battleIdx>=battleRounds.length){state='playing';return;}
+      if(!textDone)return;
+      textTimer++;if(textTimer>60){textTimer=0;battleIdx++;if(battleIdx<battleRounds.length){resetText();advanceText(battleRounds[battleIdx].p+'。'+battleRounds[battleIdx].e);}}
+    }
+    function drawBattle(){
+      drawBackground('tavern_inside');
+      var sx=0,sy=0;
+      if(battleIdx<battleRounds.length&&(battleRounds[battleIdx].eEffect==='fall'||battleRounds[battleIdx].eEffect==='defeat')){shakeTime=15;sx=(Math.random()-0.5)*shakeTime;sy=(Math.random()-0.5)*shakeTime;}
+      X.save();X.translate(sx,sy);
+      var pExp='angry';var eExp='angry';
+      if(battleRounds[battleIdx]){
+        if(battleRounds[battleIdx].pAction==='dodge') pExp='determined';
+        if(battleRounds[battleIdx].pAction==='guard') pExp='determined';
+        if(battleRounds[battleIdx].pAction==='attack') pExp='shout';
+        if(battleRounds[battleIdx].eEffect==='stagger') eExp='frown';
+        if(battleRounds[battleIdx].eEffect==='fall') eExp='angry';
+        if(battleRounds[battleIdx].eEffect==='defeat') eExp='defeated';
+      }
+      drawWuSong(W*0.3,H*0.42,1.4,pExp,1);
+      if(battleEnemy==='蒋门神'){drawJiangMenshen(W*0.7,H*0.42,1.4,eExp,1);}
+      X.restore();
+      X.fillStyle='#c43e3e';X.font='bold 28px serif';X.textAlign='center';X.fillText('VS',W/2,H*0.35);X.textAlign='left';
+      if(battleIdx<battleRounds.length){var br=battleRounds[battleIdx];drawDialogBox('对决',br.p+'\n'+br.e,true);}
+      X.fillStyle='#555';X.font='12px sans-serif';X.textAlign='center';X.fillText((battleIdx+1)+' / '+battleRounds.length,W/2,H*0.58);X.textAlign='left';
+    }
+
+    // ========== TITLE SCREEN ==========
+    function drawTitle(){
+      drawBackground('title');
+      X.strokeStyle='#d4a843';X.lineWidth=2;roundRect(X,W*0.1,H*0.15,W*0.8,H*0.7,16);X.stroke();
+      X.strokeStyle='rgba(212,168,67,0.3)';X.lineWidth=1;roundRect(X,W*0.1+6,H*0.15+6,W*0.8-12,H*0.7-12,12);X.stroke();
+      X.textAlign='center';
+      X.fillStyle='#c43e3e';X.font='bold '+Math.min(W*0.1,56)+'px serif';X.fillText('水浒传',W/2,H*0.3);
+      X.fillStyle='#d4a843';X.font='bold '+Math.min(W*0.05,28)+'px serif';X.fillText('武松醉打蒋门神',W/2,H*0.3+40);
+      X.fillStyle='#7a8ba5';X.font='14px sans-serif';X.fillText('视觉小说 · 三章剧情',W/2,H*0.3+65);
+      drawWuSong(W*0.3,H*0.55,0.7,'determined',1);
+      drawJiangMenshen(W*0.7,H*0.55,0.7,'angry',1);
+      X.fillStyle='#7a8ba5';X.font='12px sans-serif';X.textAlign='center';X.fillText('武松',W*0.3,H*0.55+55);X.fillText('蒋门神',W*0.7,H*0.55+55);X.textAlign='left';
+      var bx=W/2-90,by=H*0.72;var pulse=Math.sin(gameTime*0.003)*3;
+      X.fillStyle='#c43e3e';roundRect(X,bx,by+pulse,180,50,10);X.fill();
+      X.fillStyle='#e8dcc8';X.font='bold 20px sans-serif';X.textAlign='center';X.fillText('开始游戏',W/2,by+pulse+32);X.textAlign='left';
+      X.fillStyle='#5a5a6a';X.font='12px sans-serif';X.textAlign='center';X.fillText('点击或按空格推进剧情',W/2,H*0.88);X.textAlign='left';
+    }
+
+    // ========== CHAPTER TRANSITION ==========
+    var chapterTimer=0;
+    function drawChapterTransition(){
+      chapterTimer++;
+      var a=Math.min(chapterTimer/30,1);
+      X.fillStyle='rgba(10,8,6,'+a+')';X.fillRect(0,0,W,H);
+      if(chapterTimer>30){var ch=chapters[chapter-1]||{title:'终',subtitle:''};X.textAlign='center';X.fillStyle='#c43e3e';X.font='bold '+Math.min(W*0.08,48)+'px serif';X.fillText(ch.title,W/2,H*0.4);X.fillStyle='#d4a843';X.font='bold '+Math.min(W*0.05,28)+'px serif';X.fillText(ch.subtitle,W/2,H*0.4+40);X.textAlign='left';}
+      if(chapterTimer>90){state='playing';node=0;resetText();processNode();}
+    }
+
+    // ========== END SCREEN ==========
+    function drawEndScreen(){
+      drawBackground('tavern_celebration');
+      X.fillStyle='rgba(10,8,6,0.7)';X.fillRect(0,0,W,H);
+      X.textAlign='center';
+      X.fillStyle='#d4a843';X.font='bold '+Math.min(W*0.07,40)+'px serif';X.fillText('-- 剧终 --',W/2,H*0.3);
+      X.fillStyle='#e8dcc8';X.font='bold 18px sans-serif';X.fillText('武松醉打蒋门神 · 义夺快活林',W/2,H*0.3+40);
+      X.fillStyle='#7a8ba5';X.font='14px sans-serif';X.fillText('行侠仗义，替天行道',W/2,H*0.3+70);
+      drawWuSong(W*0.35,H*0.6,1,'smile',1);drawShiEn(W*0.65,H*0.6,1,'grateful',1);
+      var bx=W/2-90,by=H*0.75;
+      X.fillStyle='#c43e3e';roundRect(X,bx,by,180,50,10);X.fill();
+      X.fillStyle='#e8dcc8';X.font='bold 20px sans-serif';X.textAlign='center';X.fillText('重新开始',W/2,by+32);X.textAlign='left';
+    }
+
+    // ========== TEXT SYSTEM ==========
+    function resetText(){textDisplay='';charIdx=0;textDone=false;waitingChoice=false;textTimer=0;}
+    function advanceText(text){textBuffer=text;textDisplay='';charIdx=0;textDone=false;textTimer=0;}
+    function updateText(){if(textDone)return;if(charIdx<textBuffer.length){textTimer++;if(textTimer>=textSpeed){textTimer=0;textDisplay+=textBuffer[charIdx];charIdx++;}}else{textDone=true;}}
+    function skipText(){if(!textDone){textDisplay=textBuffer;charIdx=textBuffer.length;textDone=true;}}
+
+    // ========== MAIN UPDATE ==========
+    function update(){
+      gameTime++;
+      if(shakeTime>0)shakeTime--;
+      if(fadeDir!==0){fadeAlpha+=fadeDir*0.03;if(fadeAlpha>=1){fadeAlpha=1;if(fadeCallback){fadeCallback();fadeCallback=null;}}if(fadeAlpha<=0){fadeAlpha=0;fadeDir=0;}return;}
+      if(state==='title')return;
+      if(state==='chapter_transition'){drawChapterTransition();return;}
+      if(state==='battle'){updateBattle();return;}
+      if(state==='end')return;
+      if(state==='playing'){
+        var ch=chapters[chapter];if(!ch||node>=ch.nodes.length)return;
+        var nd=ch.nodes[node];if(waitingChoice)return;
+        updateText();if(!textDone)return;
+        if(nd.type==='narration'||nd.type==='scene'){textTimer++;if(textTimer>80){textTimer=0;node++;if(node>=ch.nodes.length){advanceChapter();}else{processNode();}}}
+      }
+    }
+
+    function processNode(){
+      var ch=chapters[chapter];if(!ch||node>=ch.nodes.length)return;
+      var nd=ch.nodes[node];resetText();
+      if(nd.bg)currentBg=nd.bg;
+      if(nd.type==='narration'||nd.type==='scene'){advanceText(nd.text);}
+      else if(nd.type==='dialogue'){advanceText(nd.text);}
+      else if(nd.type==='choice'){waitingChoice=true;}
+      else if(nd.type==='battle'){startBattle(nd.enemy,nd.rounds);}
+      else if(nd.type==='end_chapter'){
+        fadeDir=1;fadeCallback=function(){chapter++;node=0;if(chapter>=chapters.length){state='end';resetText();}else{state='chapter_transition';chapterTimer=0;}};
+      }
+    }
+
+    function advanceChapter(){
+      fadeDir=1;fadeCallback=function(){chapter++;node=0;if(chapter>=chapters.length){state='end';resetText();}else{state='chapter_transition';chapterTimer=0;}};
+    }
+
+    // ========== MAIN DRAW ==========
+    function draw(){
+      X.clearRect(0,0,W,H);
+      X.fillStyle='rgba(10,8,6,'+fadeAlpha+')';X.fillRect(0,0,W,H);
+      if(state==='title'){drawTitle();return;}
+      if(state==='chapter_transition'){drawChapterTransition();return;}
+      if(state==='end'){drawEndScreen();return;}
+      if(state==='battle'){drawBattle();return;}
+      if(state==='playing'){
+        var ch=chapters[chapter];if(!ch)return;
+        var nd=ch.nodes[node];
+        drawBackground(currentBg);
+        // Draw characters based on who is speaking
+        if(nd && nd.type==='dialogue'){
+          var chars = getSceneCharacters(chapter, node);
+          drawSceneCharacters(chars);
+        }else if(nd && nd.type==='narration'){
+          // During narration, show contextual characters dimmed
+          var bg=currentBg;
+          if(bg==='prison_yard'){drawWuSong(W*0.35,H*0.42,0.9,'thoughtful',0.4);}
+          else if(bg==='tavern_inside'){drawWuSong(W*0.3,H*0.42,0.9,'neutral',0.3);drawJiangMenshen(W*0.65,H*0.42,0.9,'neutral',0.3);}
+          else if(bg==='tavern_celebration'){drawWuSong(W*0.3,H*0.42,0.9,'smile',0.3);drawShiEn(W*0.65,H*0.42,0.9,'happy',0.3);}
+        }else if(nd && nd.type==='choice'){
+          var bg=currentBg;
+          if(bg==='prison_yard'){drawWuSong(W*0.35,H*0.42,0.9,'determined',0.4);drawShiEn(W*0.65,H*0.42,0.9,'worried',0.4);}
+          else if(bg==='tavern_inside'){drawWuSong(W*0.3,H*0.42,0.9,'smirk',0.4);drawJiangMenshen(W*0.65,H*0.42,0.9,'angry',0.4);}
+        }
+        if(!waitingChoice&&nd){var isNar=nd.type==='narration';var spk=nd.speaker||'';drawDialogBox(spk,textDisplay,isNar);}
+        if(waitingChoice){drawChoiceBoxes(nd.options);}
+        X.fillStyle='rgba(0,0,0,0.5)';X.fillRect(0,0,W,36);
+        X.fillStyle='#d4a843';X.font='bold 13px serif';X.fillText(ch.title+' · '+ch.subtitle,16,24);
+        X.fillStyle='#555';X.font='12px sans-serif';var progress=Math.round((node/ch.nodes.length)*100);X.fillText('进度 '+progress+'%',W-80,24);
+      }
+    }
+
+    // ========== INPUT ==========
+    function gameClick(e){
+      var rect=GC.getBoundingClientRect();
+      var mx=(e.clientX||e.touches[0].clientX)-rect.left;
+      var my=(e.clientY||e.touches[0].clientY)-rect.top;
+
+      if(state==='title'){
+        var bx=W/2-90,by=H*0.72;if(mx>bx&&mx<bx+180&&my>by&&my<by+50){state='playing';chapter=0;node=0;resetText();processNode();}return;
+      }
+      if(state==='end'){
+        var bx=W/2-90,by=H*0.75;if(mx>bx&&mx<bx+180&&my>by&&my<by+50){state='title';}return;
+      }
+      if(state==='battle'){if(!textDone){skipText();return;}textTimer=55;return;}
+      if(state==='playing'){
+        if(waitingChoice){for(var i=0;i<choiceBoxes.length;i++){var cb=choiceBoxes[i];if(mx>cb.x&&mx<cb.x+cb.w&&my>cb.y&&my<cb.y+cb.h){waitingChoice=false;node=chapters[chapter].nodes[node].options[i].next;processNode();return;}}return;}
+        if(!textDone){skipText();return;}
+        var ch=chapters[chapter];var nd=ch.nodes[node];
+        if(nd.type==='narration'||nd.type==='scene'){textTimer=70;}
+        else{node++;if(node>=ch.nodes.length){advanceChapter();}else{processNode();}}
+      }
+    }
+
+    function gameKeydown(e){
+      if(!gameRunning)return;
+      if(e.code==='Space'||e.code==='Enter'){e.preventDefault();gameClick({clientX:W/2+GC.getBoundingClientRect().left,clientY:H*0.8+GC.getBoundingClientRect().top});}
+    }
+
+    // ========== GAME LOOP ==========
+    function gameLoop(){
+      if(!gameRunning)return;
+      update();draw();
+      gameAnimId=requestAnimationFrame(gameLoop);
+    }
+
+    // ========== PUBLIC API ==========
+    window.launchGame=function(){
+      var modal=document.getElementById('gameModal');
+      modal.classList.add('active');
+      document.body.style.overflow='hidden';
+      gameResize();
+      state='title';chapter=0;node=0;fadeAlpha=0;fadeDir=0;gameTime=0;
+      textBuffer='';textDisplay='';charIdx=0;textDone=false;waitingChoice=false;
+      currentBg='tavern_outside';
+      gameRunning=true;
+      gameLoop();
+    };
+
+    window.closeGame=function(){
+      var modal=document.getElementById('gameModal');
+      modal.classList.remove('active');
+      document.body.style.overflow='';
+      gameRunning=false;
+      if(gameAnimId){cancelAnimationFrame(gameAnimId);gameAnimId=null;}
+    };
+
+    window.addEventListener('resize',function(){if(gameRunning)gameResize();});
+    GC.addEventListener('click',function(e){if(gameRunning)gameClick(e);});
+    document.addEventListener('keydown',gameKeydown);
+
+  })();
+  </script>
 </body>
 </html>
